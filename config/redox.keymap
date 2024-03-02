@@ -134,7 +134,7 @@
 &sys_reset  &trans  &trans          &trans          &trans           &trans                                         &trans  &trans     &trans          &trans     &trans  &trans
 &trans      &trans  &trans          &mmv MOVE_UP    &trans           &trans  &trans                         &trans  &trans  &trans     &msc SCRL_UP    &trans     &trans  &trans
 &trans      &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans                         &trans  &trans  &mkp LCLK  &msc SCRL_DOWN  &mkp RCLK  &trans  &trans
-&trans      &trans  &trans          &trans          &trans           &trans  &bt BT_PRV  &bt BT_PRV &trans  &trans  &trans  &trans     &trans          &trans     &trans  &trans
+&trans      &trans  &trans          &trans          &trans           &trans  &bt BT_PRV  &bt BT_NXT &trans  &trans  &trans  &trans     &trans          &trans     &trans  &trans
 &trans      &trans  &trans          &trans          &trans                   &trans      &trans     &trans  &trans          &trans     &trans          &trans     &trans  &trans
             >;
         };
