@@ -13,20 +13,6 @@
 
 / {
     macros {
-        terminal: terminal {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL &kp LEFT_ALT>,
-                <&macro_tap>,
-                <&kp T>,
-                <&macro_release>,
-                <&kp LCTRL &kp LEFT_ALT>;
-
-            label = "TERMINAL";
-        };
-
         maximize: maximize {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -96,7 +82,6 @@
 
             label = "SWITCH_WIN";
         };
-
     };
 
     keymap {
@@ -111,11 +96,11 @@
             // | CRTL  | ALT | GUI | LOWER |    GUI    | LOWER | SPACE   | --- | DEL  | SPACE |     RAISE     | LEFT  | DOWN | UP |   RIGHT   |
 
             bindings = <
-&kp GRAVE   &kp N1    &kp N2                &kp N3        &kp N4  &kp N5                                                                       &kp N6  &kp N7  &kp N8         &kp N9     &kp N0     &kp MINUS
-&kp TAB     &kp Q     &kp W                 &kp E         &kp R   &kp T   &kp KP_PLUS                                          &kp APOS        &kp Y   &kp U   &kp I          &kp O      &kp P      &kp RIGHT_BRACKET
-&kp ESCAPE  &kp A     &kp S                 &kp D         &kp F   &kp G   &kp POUND                                            &kp KP_ASTERISK &kp H   &kp J   &kp K          &kp L      &kp SEMI   &kp BACKSLASH
-&kp LSHFT   &kp Z     &kp X                 &kp C         &kp V   &kp B   &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &kp PAGE_DOWN  &kp PAGE_UP     &kp N   &kp M   &kp COMMA      &kp DOT    &kp SLASH  &kp RSHFT
-&kp LCTRL   &kp LGUI  &kp NON_US_BACKSLASH  &kp LEFT_ALT  &mo 1           &kp SPACE          &kp BACKSPACE      &kp DEL        &kp ENTER               &mo 2   &kp RIGHT_ALT  &terminal  &kp RGUI   &kp RCTRL
+&kp GRAVE   &kp N1    &kp N2                &kp N3        &kp N4  &kp N5                                                                        &kp N6  &kp N7  &kp N8         &kp N9           &kp N0     &kp MINUS
+&kp TAB     &kp Q     &kp W                 &kp E         &kp R   &kp T   &kp KP_PLUS                                          &kp APOS         &kp Y   &kp U   &kp I          &kp O            &kp P      &kp RIGHT_BRACKET
+&kp ESCAPE  &kp A     &kp S                 &kp D         &kp F   &kp G   &kp POUND                                            &kp KP_ASTERISK  &kp H   &kp J   &kp K          &kp L            &kp SEMI   &kp BACKSLASH
+&kp LSHFT   &kp Z     &kp X                 &kp C         &kp V   &kp B   &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &kp PAGE_DOWN  &kp PAGE_UP      &kp N   &kp M   &kp COMMA      &kp DOT          &kp SLASH  &kp RSHFT
+&kp LCTRL   &kp LGUI  &kp NON_US_BACKSLASH  &kp LEFT_ALT  &mo 1           &kp SPACE          &kp BACKSPACE      &kp DEL        &kp ENTER                &mo 2   &kp RIGHT_ALT  &lt 1 LC(LA(T))  &kp RGUI   &kp RCTRL
             >;
         };
 
@@ -131,11 +116,11 @@
 
         layer_2 {
             bindings = <
-&sys_reset  &trans  &trans          &trans          &trans           &trans                                         &trans  &trans     &trans          &trans     &trans  &trans
-&trans      &trans  &trans          &mmv MOVE_UP    &trans           &trans  &trans                         &trans  &trans  &trans     &msc SCRL_UP    &trans     &trans  &trans
-&trans      &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans                         &trans  &trans  &mkp LCLK  &msc SCRL_DOWN  &mkp RCLK  &trans  &trans
-&trans      &trans  &trans          &trans          &trans           &trans  &bt BT_PRV  &bt BT_NXT &trans  &trans  &trans  &trans     &trans          &trans     &trans  &trans
-&trans      &trans  &trans          &trans          &trans                   &trans      &trans     &trans  &trans          &trans     &trans          &trans     &trans  &trans
+&sys_reset  &trans  &trans          &trans          &trans           &trans                                            &trans  &trans     &trans          &trans     &trans  &trans
+&trans      &trans  &trans          &mmv MOVE_UP    &trans           &trans  &trans                            &trans  &trans  &trans     &msc SCRL_UP    &trans     &trans  &trans
+&trans      &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans                            &trans  &trans  &mkp LCLK  &msc SCRL_DOWN  &mkp RCLK  &trans  &trans
+&trans      &trans  &trans          &trans          &trans           &trans  &bt BT_PRV  &bt BT_NXT    &trans  &trans  &trans  &trans     &trans          &trans     &trans  &trans
+&trans      &trans  &trans          &trans          &trans                   &trans      &trans        &trans  &trans          &trans     &trans          &trans     &trans  &trans
             >;
         };
     };
