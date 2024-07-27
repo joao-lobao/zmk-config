@@ -67,6 +67,34 @@
 
             label = "MOVE_LEFT";
         };
+
+        resize_win_left: resize_win_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCMD>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LCMD>;
+
+            label = "RESIZE_WIN_LEFT";
+        };
+
+        resize_win_right: resize_win_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCMD>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LCMD>;
+
+            label = "RESIZE_WIN_RIGHT";
+        };
     };
 
     keymap {
@@ -81,11 +109,11 @@
             // | CRTL  | ALT | GUI | LOWER |    GUI    | LOWER | SPACE   | --- | DEL  | SPACE |     RAISE     | LEFT  | DOWN | UP |   RIGHT   |
 
             bindings = <
-&kp GRAVE   &kp N1    &kp N2                &kp N3        &kp N4  &kp N5                                                                        &kp N6  &kp N7  &kp N8         &kp N9           &kp N0     &kp MINUS
-&kp TAB     &kp Q     &kp W                 &kp E         &kp R   &kp T   &kp APOS                                                 &kp KP_PLUS  &kp Y   &kp U   &kp I          &kp O            &kp P      &kp RIGHT_BRACKET
-&kp ESCAPE  &kp A     &kp S                 &kp D         &kp F   &kp G   &kp KP_ASTERISK                                          &kp POUND    &kp H   &kp J   &kp K          &kp L            &kp SEMI   &kp BACKSLASH
-&kp LSHFT   &kp Z     &kp X                 &kp C         &kp V   &kp B   &kp C_VOLUME_UP  &kp C_VOLUME_DOWN    &kp PAGE_DOWN  &kp PAGE_UP      &kp N   &kp M   &kp COMMA      &kp DOT          &kp SLASH  &kp RSHFT
-&kp LCTRL   &kp LGUI  &kp NON_US_BACKSLASH  &kp LEFT_ALT  &mo 1           &kp SPACE        &kp BACKSPACE        &kp DEL        &kp ENTER                &mo 2   &kp RIGHT_ALT  &lt 3 LC(LA(T))  &kp RGUI   &kp RCTRL
+&kp GRAVE   &kp N1    &kp N2                &kp N3        &kp N4  &kp N5                                                                    &kp N6  &kp N7  &kp N8         &kp N9           &kp N0     &kp MINUS
+&kp TAB     &kp Q     &kp W                 &kp E         &kp R   &kp T   &kp APOS                                             &kp KP_PLUS  &kp Y   &kp U   &kp I          &kp O            &kp P      &kp RIGHT_BRACKET
+&kp ESCAPE  &kp A     &kp S                 &kp D         &kp F   &kp G   &kp KP_ASTERISK                                      &kp POUND    &kp H   &kp J   &kp K          &kp L            &kp SEMI   &kp BACKSLASH
+&kp LSHFT   &kp Z     &kp X                 &kp C         &kp V   &kp B   &kp C_VOLUME_UP  &kp C_VOLUME_DOWN    &kp PAGE_DOWN  &kp PAGE_UP  &kp N   &kp M   &kp COMMA      &kp DOT          &kp SLASH  &kp RSHFT
+&kp LCTRL   &kp LGUI  &kp NON_US_BACKSLASH  &kp LEFT_ALT  &mo 1           &kp SPACE        &kp BACKSPACE        &kp DEL        &kp ENTER            &mo 2   &kp RIGHT_ALT  &lt 3 LC(LA(T))  &kp RGUI   &kp RCTRL
             >;
         };
 
@@ -111,11 +139,11 @@
 
         layer_3 {
             bindings = <
-&bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                                &trans    &trans    &trans  &trans     &trans  &bootloader
-&trans       &trans        &trans        &trans        &trans        &trans        &trans                                &trans  &trans    &trans    &trans  &trans     &trans  &trans
-&trans       &trans        &trans        &trans        &trans        &trans        &trans                                &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans       &trans        &trans        &trans        &trans        &trans        &bt BT_NXT  &bt BT_PRV        &trans  &trans  &trans    &trans    &trans  &trans     &trans  &trans
-&trans       &trans        &trans        &trans        &trans                      &bt BT_CLR  &bt BT_CLR_ALL    &trans  &trans            &trans    &trans  &trans     &trans  &trans
+&bootloader  &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4                                                &trans    &trans    &trans  &trans     &trans  &bootloader
+&trans       &trans        &trans            &trans        &trans             &trans        &trans                                &trans  &trans    &trans    &trans  &trans     &trans  &trans
+&trans       &trans        &resize_win_left  &trans        &resize_win_right  &trans        &trans                                &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans       &trans        &trans            &trans        &trans             &trans        &bt BT_NXT  &bt BT_PRV        &trans  &trans  &trans    &trans    &trans  &trans     &trans  &trans
+&trans       &trans        &trans            &trans        &trans                           &bt BT_CLR  &bt BT_CLR_ALL    &trans  &trans            &trans    &trans  &trans     &trans  &trans
             >;
         };
     };
