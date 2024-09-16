@@ -98,34 +98,6 @@
             label = "MOVE_LEFT";
         };
 
-        resize_win_up: resize_win_up {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCMD>,
-                <&macro_tap>,
-                <&kp UP>,
-                <&macro_release>,
-                <&kp LCMD>;
-
-            label = "RESIZE_WIN_UP";
-        };
-
-        resize_win_down: resize_win_down {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCMD>,
-                <&macro_tap>,
-                <&kp DOWN>,
-                <&macro_release>,
-                <&kp LCMD>;
-
-            label = "RESIZE_WIN_DOWN";
-        };
-
         resize_win_left: resize_win_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -198,8 +170,8 @@
         layer_3 {
             bindings = <
 &bootloader  &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2     &bt BT_SEL 3       &bt BT_SEL 4                                                &trans    &trans    &trans  &trans     &trans  &bootloader
-&trans       &trans        &trans            &resize_win_up   &trans             &trans        &trans                                &trans  &trans    &trans    &trans  &trans     &trans  &trans
-&trans       &trans        &resize_win_left  &resize_win_down &resize_win_right  &trans        &trans                                &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans       &trans        &trans            &maximize        &trans             &trans        &trans                                &trans  &trans    &trans    &trans  &trans     &trans  &trans
+&trans       &trans        &resize_win_left  &minimize        &resize_win_right  &trans        &trans                                &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
 &trans       &trans        &trans            &trans           &trans             &trans        &bt BT_NXT  &bt BT_PRV        &trans  &trans  &trans    &trans    &trans  &trans     &trans  &trans
 &trans       &trans        &trans            &trans           &trans                           &bt BT_CLR  &trans            &trans  &trans            &trans    &trans  &trans     &trans  &trans
             >;
